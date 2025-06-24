@@ -3,12 +3,13 @@ package com.katho.email_service.infra.ses;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.model.*;
+import com.katho.email_service.adapters.EmailSenderGateway;
 import com.katho.email_service.core.EmailServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SesEmailSender {
+public class SesEmailSender implements EmailSenderGateway {
 
     private final AmazonSimpleEmailService amazonSimpleEmailService;
 
